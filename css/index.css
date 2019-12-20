@@ -10,6 +10,10 @@
   background: #17a2b8;
   color: #ffffff;
 }
+.btn:hover {
+  background-color: #148ea1;
+  cursor: pointer;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
