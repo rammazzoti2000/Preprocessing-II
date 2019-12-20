@@ -1,1 +1,17 @@
 // Mixins in here
+.custom-btn(@justify, @align) {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: @justify;
+    align-content: @align;
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 2rem;   
+    background: @button-bg;
+    color: @main-bg; 
+}
+
+.btn {
+    .custom-btn(center, center);    
+}
