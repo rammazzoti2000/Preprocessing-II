@@ -218,6 +218,7 @@ img {
 #nav-outer #nav #logo {
   display: block;
   float: left;
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   #nav-outer #nav #logo {
