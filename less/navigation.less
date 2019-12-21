@@ -1,58 +1,71 @@
 // Navigation Styles here
 .nav-behaviour(@float) {
-    display: inline-block;
+    display: block;
     float: @float;
 }
 
+
+
+.mobileFriendly(@justify, @align) {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: @justify;
+    align-content: @align;
+}
+
 #nav-outer {
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
-    border-bottom: 2px dashed @navigation-border;  
     margin: 0 auto;
-    #nav {
-        max-width: 800px;
-        width: 100%;
-        padding: 40px 0 30px 0;
-        margin: 0 auto;
-
-        #logo { 
-            .nav-behaviour(left);
-        }
-        .clear {
-            clear: both;
-        }        
+    border-bottom: 2px dashed @navigation-border;
+    padding: 40px 0 25px 0;
+    @media @mobile {
+        padding-bottom: 10px;
     }
+    
+    #nav {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        @media @mobile {
+            .mobileFriendly(center, center);
+        }
+        
+        #logo {
+            .nav-behaviour(left);
+            @media @mobile {
+                margin: 0 auto;
+            }
+        }
 
-    .nav {
-        .nav-behaviour(right);
-        list-style: none;    /*gets rid of bullet points*/ 
-        text-align: left;
-        /*padding: 0px -10px 0px -10px; */
-        margin: 0;
-        li {                     
-            display:Inline-block;
-            padding: 10px 9px 10px 9px; /*nav bar text*/
-            a {                                               
+        .nav-elem {
+            .nav-behaviour(right);
+            padding-top: 10px;
+
+            @media @mobile {
+                width: 100%;
+                text-align: center;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+            }
+            
+            a {
+                font-size: 1.6rem;
                 text-decoration: none;
-                font-size: 1.7rem;
                 color: @shark;
-                padding: 5px 0px 5px 0px
+                padding: 0px 0 0 20px;
+                @media @mobile {
+                    display: flex;
+                    flex-flow: row wrap;
+                    padding: 10px 2px 2px 0;
+                }
             }
         }
     }
+
+    .clear {
+        clear: both;
+    }
+
 }
-
-
-
-
-  
-  
-  
-
- 
-
- 
-  
-  
-    
-  
