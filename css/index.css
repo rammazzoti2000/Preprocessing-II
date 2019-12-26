@@ -357,6 +357,15 @@ img {
 .home .content-destination img {
   border-radius: 10px;
 }
+@media (max-width: 500px) {
+  .home .content-destination img {
+    width: 100%;
+    padding: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .home .content-pick {
   padding-top: 10px;
   border-top: 2px dashed #C0C0C0;
